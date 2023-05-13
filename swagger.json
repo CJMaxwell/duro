@@ -1,0 +1,50 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "My API"
+    },
+    "basePath": "/api",
+    "schemes": [
+      "http"
+    ],
+    "securityDefinitions": {
+        "Bearer": {
+          "type": "apiKey",
+          "name": "Authorization",
+          "in": "header"
+        }
+    },
+    "paths": {
+      "/users": {
+        "get": {
+          "summary": "Get a list of users",
+          "description": "Returns a list of users",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
